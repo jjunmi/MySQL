@@ -32,7 +32,7 @@ CREATE TABLE topic(
 - SET PASSWORD = PASSWORD(''); 비번 재생성 경고 뜰때
 ### DESC topic : CREATE한 테이블 구조 볼 수 있음
 |Field|Type|Null|Key|Default|Extra|
-|------|---|---|---|---|---|
+|---|---|---|---|---|---|
 |id|int(11)|NO|PRI|NULL|auto_increment|
 |title|varchar(100)|NO||NULL||
 |description|text|YES||NULL||
@@ -60,9 +60,9 @@ Query OK, 1row affected(0.02sec)
     SELECT * FROM topic;
 ```
 |id|title|description|created|author|profile|
-|------|---|---|---|---|---|
+|---|---|---|---|---|---|
 |1|MySQL|MySQL is ...|2024-05-14 17:49:59|jm|developer|  
-1 row in set(0.00sec)
+#### 1 row in set(0.00sec)
 #### 행 하나 더 추가
 ```bash
     INSERT INTO topic (title,description,created,author,profile) VALUES('ORACLE','ORACLE is ...',NOW(),'jm','developer');
@@ -70,7 +70,7 @@ Query OK, 1row affected(0.02sec)
     SELECT * FROM topic;
 ```
 |id|title|description|created|author|profile|
-|------|---|---|---|---|---|
+|---|---|---|---|---|---|
 |1|MySQL|MySQL is ...|2024-05-14 17:49:59|jm|developer|
 |2|ORACLE|ORACLE is ...|2024-05-14 17:52:15|jm|developer|  
-2 row in set(0.00sec)
+#### 2 row in set(0.00sec)
