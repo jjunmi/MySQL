@@ -96,7 +96,7 @@ Query OK, 1row affected(0.02sec)
 |5|MongoDB|2024-05-14 17:55:47|tom|
 - 5 rows in set(0.00sec)
 #### Read : author jm만 출력
-- SELECT id,title,created,author FROM topic WHERE author='jm';
+- SELECT id,title,created,author FROM topic WHERE author='jm';  
 |id|title|created|author|
 |---|---|---|---|---|---|
 |1|MySQL|2024-05-14 17:49:59|jm|
@@ -106,7 +106,7 @@ Query OK, 1row affected(0.02sec)
 - SELECT id,title,created,author FROM topic WHERE authoe='jm' ORDER BY id DESC;
 - 아이디 기준으로 큰숫자가 나오게 출력
 |id|title|created|author|
-|---|---|---|---|---|---|
+|---|---|---|---|
 |5|MongoDB|2024-05-14 17:55:47|tom|
 |3|SQL Server|2024-05-14 17:54:20|jm|
 |1|MySQL|2024-05-14 17:49:59|jm|
@@ -114,7 +114,7 @@ Query OK, 1row affected(0.02sec)
 - SELECT id,title,created,author FROM topic WHERE authoe='jm' ORDER BY id DESC LIMIT 2;
 - 두건만 보기(1억개 있을때 다출력하면 컴터 과부화걸림...)
 |id|title|created|author|
-|---|---|---|---|---|---|
+|---|---|---|---|
 |5|MongoDB|2024-05-14 17:55:47|tom|
 |3|SQL Server|2024-05-14 17:54:20|jm|
 ### Update 수정
