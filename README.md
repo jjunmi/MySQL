@@ -49,7 +49,7 @@ CREATE TABLE topic(
 - INSERT INTO topic(,,,) VALUE('','',''): 행 추가(id 지정안하면 자동 값 증가 생성됨,NOW()현재시간)
 - Query OK
 - SELECT * FROM topic: topic에서 모든 데이터를 가져와
-- 
+#### Create row: INSERT INTO
 ```bash
     ./mysql -uroot -p
     USE opentutorials;
@@ -62,7 +62,7 @@ Query OK, 1row affected(0.02sec)
 |id|title|description|created|author|profile|
 |---|---|---|---|---|---|
 |1|MySQL|MySQL is ...|2024-05-14 17:49:59|jm|developer|  
-#### 1 row in set(0.00sec)
+- 1 row in set(0.00sec)
 #### 행 하나 더 추가
 ```bash
     INSERT INTO topic (title,description,created,author,profile) VALUES('ORACLE','ORACLE is ...',NOW(),'jm','developer');
@@ -73,4 +73,5 @@ Query OK, 1row affected(0.02sec)
 |---|---|---|---|---|---|
 |1|MySQL|MySQL is ...|2024-05-14 17:49:59|jm|developer|
 |2|ORACLE|ORACLE is ...|2024-05-14 17:52:15|jm|developer|  
-#### 2 row in set(0.00sec)
+- 2 row in set(0.00sec)
+### Create row
