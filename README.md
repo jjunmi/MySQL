@@ -148,5 +148,8 @@ Query OK, 1row affected(0.02sec)
 |3|SQL Server|SQL Server is ...|2024-05-14 17:54:20|jm|developer|  
 |4|PostgreSQL|PostgreSQL is ...|2024-05-14 17:55:21|jenny|developer|  
 
-
+### RENAME TABLE topic TO topic_backup;
+### SELECT * FROM topic LEFT JOIN author ON topic.author_id = author.id;
+### SELECT topic.id,title,description,created,name,profile FROM topic LEFT JOIN author ON topic.author_id = author.id;
+### SELECT topic.id AS topic_id,title,description,created,name,profile FROM topic LEFT JOIN author ON topic.author_id = author.id;
 
