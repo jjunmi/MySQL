@@ -73,5 +73,80 @@ Query OK, 1row affected(0.02sec)
 |---|---|---|---|---|---|
 |1|MySQL|MySQL is ...|2024-05-14 17:49:59|jm|developer|
 |2|ORACLE|ORACLE is ...|2024-05-14 17:52:15|jm|developer|  
-- 2 row in set(0.00sec)
-### Create row
+- 2 rows in set(0.00sec)
+#### 상단 방식으로 총 5 개 행 추가, 추가 후 , SELECT * FROM topic : 모든 데이터 출력 명령어 
+- SELECT * FROM topic;
+|id|title|description|created|author|profile|
+|---|---|---|---|---|---|
+|1|MySQL|MySQL is ...|2024-05-14 17:49:59|jm|developer|
+|2|ORACLE|ORACLE is ...|2024-05-14 17:52:15|jennifer|developer|  
+|3|SQL Server|SQL Server is ...|2024-05-14 17:54:20|jm|developer|  
+|4|PostgreSQL|PostgreSQL is ...|2024-05-14 17:55:21|jenny|developer|  
+|5|MongoDB|MongoDB is ...|2024-05-14 17:55:47|tom|developer|  
+- 5 rows in set(0.00sec)
+### Read 
+- 검색시 키워드 : mysql select syntax
+- SELECT id,title,created,author FROM topic;
+|id|title|created|author|
+|---|---|---|---|---|---|
+|1|MySQL|2024-05-14 17:49:59|jm|
+|2|ORACLE|2024-05-14 17:52:15|jennifer|
+|3|SQL Server|2024-05-14 17:54:20|jm|
+|4|PostgreSQL|2024-05-14 17:55:21|jenny|
+|5|MongoDB|2024-05-14 17:55:47|tom|
+- 5 rows in set(0.00sec)
+#### Read : author jm만 출력
+- SELECT id,title,created,author FROM topic WHERE author='jm';
+|id|title|created|author|
+|---|---|---|---|---|---|
+|1|MySQL|2024-05-14 17:49:59|jm|
+|3|SQL Server|2024-05-14 17:54:20|jm|
+|5|MongoDB|2024-05-14 17:55:47|tom|
+#### Read : 정렬 ,descending 큰거부터, Ascending 작은거 부터
+- SELECT id,title,created,author FROM topic WHERE authoe='jm' ORDER BY id DESC;
+- 아이디 기준으로 큰숫자가 나오게 출력
+|id|title|created|author|
+|---|---|---|---|---|---|
+|5|MongoDB|2024-05-14 17:55:47|tom|
+|3|SQL Server|2024-05-14 17:54:20|jm|
+|1|MySQL|2024-05-14 17:49:59|jm|
+#### Read : 제약걸기 LIMIT
+- SELECT id,title,created,author FROM topic WHERE authoe='jm' ORDER BY id DESC LIMIT 2;
+- 두건만 보기(1억개 있을때 다출력하면 컴터 과부화걸림...)
+|id|title|created|author|
+|---|---|---|---|---|---|
+|5|MongoDB|2024-05-14 17:55:47|tom|
+|3|SQL Server|2024-05-14 17:54:20|jm|
+### Update 수정
+- SELECT * FROM topic;
+|id|title|description|created|author|profile|
+|---|---|---|---|---|---|
+|1|MySQL|MySQL is ...|2024-05-14 17:49:59|jm|developer|
+|2|ORACLE|ORACLE is |2024-05-14 17:52:15|jennifer|developer|  
+|3|SQL Server|SQL Server is ...|2024-05-14 17:54:20|jm|developer|  
+|4|PostgreSQL|PostgreSQL is ...|2024-05-14 17:55:21|jenny|developer|  
+|5|MongoDB|MongoDB is ...|2024-05-14 17:55:47|tom|developer|  
+- 5 rows in set(0.00sec)
+### Update : 2번 수정
+- UPDATE topic SET description='Oracle is ...', title='Oracle' WHERE id=2;
+- SELECT * FROM topic;
+|id|title|description|created|author|profile|
+|---|---|---|---|---|---|
+|1|MySQL|MySQL is ...|2024-05-14 17:49:59|jm|developer|
+|2|Oracle|Oracle is ...|2024-05-14 17:52:15|jennifer|developer|  
+|3|SQL Server|SQL Server is ...|2024-05-14 17:54:20|jm|developer|  
+|4|PostgreSQL|PostgreSQL is ...|2024-05-14 17:55:21|jenny|developer|  
+|5|MongoDB|MongoDB is ...|2024-05-14 17:55:47|tom|developer|  
+- 5 rows in set(0.00sec)
+### Delete 삭제
+- 5 번 삭제
+- DELETE FROM topic WHERE id=5;
+|id|title|description|created|author|profile|
+|---|---|---|---|---|---|
+|1|MySQL|MySQL is ...|2024-05-14 17:49:59|jm|developer|
+|2|Oracle|Oracle is ...|2024-05-14 17:52:15|jennifer|developer|  
+|3|SQL Server|SQL Server is ...|2024-05-14 17:54:20|jm|developer|  
+|4|PostgreSQL|PostgreSQL is ...|2024-05-14 17:55:21|jenny|developer|  
+
+
+
